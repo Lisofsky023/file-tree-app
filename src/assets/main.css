@@ -1,0 +1,25 @@
+@import './base.css';
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+
+  font-weight: normal;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+}
+
+img {
+  width: 20px;
+  height: auto;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+img:hover {
+  opacity: 0.7;
+}
