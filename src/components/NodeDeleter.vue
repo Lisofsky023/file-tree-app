@@ -28,8 +28,4 @@ export default {
 </script>
 
 <style>
-.action-icon {
-  width: 15px;
-  margin-left: 10px;
-}
 </style>

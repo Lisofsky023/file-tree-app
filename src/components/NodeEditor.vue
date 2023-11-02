@@ -3,7 +3,9 @@
 </template>
 
 <script>
-export default {
+import { defineComponent, toRefs } from 'vue';
+
+export default defineComponent({
   props: {
     editIcon: {
       type: String,
@@ -16,9 +18,11 @@ export default {
   },
   emits: ['edit'],
   setup(props, { emit }) {
-    function enableEditing() {
-      if (!props.isEditing) {
-        emit('edit');
+    const { isEditing } = toRefs(props);
+
+    function enableEditing(event) {
+      if (!isEditing.value) {
+        emit('edit', event);
       }
     }
 
@@ -26,12 +30,8 @@ export default {
       enableEditing
     };
   }
-};
+});
 </script>
 
 <style>
-.action-icon {
-  width: 15px;
-  margin-left: 10px;
-}
 </style>
