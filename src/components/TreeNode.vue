@@ -29,6 +29,7 @@ import editIconPath from '../assets/edit.png';
 import deleteIconPath from '../assets/delete.png';
 import folderIconPath from '../assets/folder.png';
 import fileIconPath from '../assets/file.png';
+import { NODE_TYPES } from '../store/constants';
 
 export default {
   components: {
@@ -47,7 +48,7 @@ export default {
     const isEditing = ref(false);
     const newName = ref(props.item.name);
 
-    const isFolder = computed(() => props.item.type === 'dir');
+    const isFolder = computed(() => props.item.type === NODE_TYPES.DIRECTORY);
 
     const handleClickOutside = (event) => {
       if (isEditing.value && !event.target.closest('.edit-input')) {
